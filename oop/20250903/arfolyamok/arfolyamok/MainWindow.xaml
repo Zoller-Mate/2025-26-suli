@@ -1,0 +1,89 @@
+﻿<Window x:Class="arfolyamok.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:arfolyamok"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Egy napi árfolyamok">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="76*"/>
+                        <ColumnDefinition Width="321*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10" Grid.ColumnSpan="2">
+                        <Label Content="Dátum:" VerticalAlignment="Center"/>
+                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" x:Name="dateComboBox"/>
+                        <Button Content="Lekérdez" Margin="5,0" x:Name="Lekerdez_btn_1" Click="Lekerdez_btn_1_Click"/>
+                    </StackPanel>
+
+                    <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="eredmenyDataGrid1" Grid.ColumnSpan="2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Egy valuta árfolyamai">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Margin="10,10,10,10">
+                        <Label Content="Valuta:" VerticalAlignment="Center"/>
+                        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" x:Name="valutaComboBox2"/>
+                        <Button Content="Lekérdez" Margin="5,0" x:Name="Lekerdez_btn_2" Click="Lekerdez_btn_2_Click"/>
+                    </StackPanel>
+
+                    <DataGrid Grid.Row="1" d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="eredmenyDataGrid2"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Valuta átváltó">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                        <Label Content="Alap valuta: "/>
+                        <ComboBox Width="120" x:Name="valutaComboBox3_alap"/>
+                        <TextBox Width="120" x:Name="alapValutaTextBox"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                        <Label Content="Cél valuta: "/>
+                        <ComboBox Width="120" x:Name="valutaComboBox3_cel"/>
+                        <TextBlock Width="120" x:Name="celValutaTextBlock" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                        <Label Content="Datum: "/>
+                        <ComboBox Width="120" x:Name="dateComboBox3"/>
+                    </StackPanel>
+                    <Button Content="SZÁMOL" Grid.Row="3" x:Name="valutaAtvalton_btn" Click="valutaAtvalton_btn_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Egy valuta napi árfolyama">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Valuta: "/>
+                        <ComboBox Width="120" x:Name="valutaComboBox4"/>
+                        <Label Content="Dátum: "/>
+                        <ComboBox Width="120" x:Name="dateComboBox4"/>
+                        <Button Content="Lekérdezés" x:Name="Lekerdez_btn_4" Click="Lekerdez_btn_4_Click"/>
+                        <TextBlock Width="120" x:Name="napiValutaTextBox" VerticalAlignment="Center" Margin="10,0,0,0" FontWeight="Bold"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

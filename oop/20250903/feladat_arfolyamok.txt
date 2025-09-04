@@ -1,0 +1,7 @@
+Készíts asztali alkalmazást és adatbázist!
+Az arfolyamok.xlsx állomány valuták árfolyamait tartalmazza. Készíts belőle adatbázist!
+Az adatbázis adatainak felhasználásával készíts asztali alkalmazást, mely a következő feladatokat végzi el:
+1. egy nap összes árfolyamát megmutatja;
+2. egy valuta árfolyamait megmutatja;
+3. az egyik valutát átváltja a másikra az árfolyam alapján;
+4. egy nap egy valuta árfolyamát megmutatja.
