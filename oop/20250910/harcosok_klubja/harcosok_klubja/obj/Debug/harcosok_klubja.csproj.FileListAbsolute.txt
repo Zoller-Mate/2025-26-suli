@@ -1,0 +1,7 @@
+C:\GITHUB\2025-26-suli\oop\20250910\harcosok_klubja\harcosok_klubja\bin\Debug\harcosok_klubja.exe.config
+C:\GITHUB\2025-26-suli\oop\20250910\harcosok_klubja\harcosok_klubja\bin\Debug\harcosok_klubja.exe
+C:\GITHUB\2025-26-suli\oop\20250910\harcosok_klubja\harcosok_klubja\bin\Debug\harcosok_klubja.pdb
+C:\GITHUB\2025-26-suli\oop\20250910\harcosok_klubja\harcosok_klubja\obj\Debug\harcosok_klubja.csproj.AssemblyReference.cache
+C:\GITHUB\2025-26-suli\oop\20250910\harcosok_klubja\harcosok_klubja\obj\Debug\harcosok_klubja.csproj.CoreCompileInputs.cache
+C:\GITHUB\2025-26-suli\oop\20250910\harcosok_klubja\harcosok_klubja\obj\Debug\harcosok_klubja.exe
+C:\GITHUB\2025-26-suli\oop\20250910\harcosok_klubja\harcosok_klubja\obj\Debug\harcosok_klubja.pdb

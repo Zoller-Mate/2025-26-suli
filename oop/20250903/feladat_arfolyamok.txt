@@ -5,3 +5,4 @@ Az adatbázis adatainak felhasználásával készíts asztali alkalmazást, mely
 2. egy valuta árfolyamait megmutatja;
 3. az egyik valutát átváltja a másikra az árfolyam alapján;
 4. egy nap egy valuta árfolyamát megmutatja.
+

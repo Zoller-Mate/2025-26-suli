@@ -1,0 +1,93 @@
+SELECT és Alap Lekérdezések
+
+1.	Listázd ki az összes játékos nevét és azonosítóját a Bowlers táblából!
+2.	Mely játékosok értek el több mint 200-as pontszámot? Listázd ki a nevüket és pontszámukat!
+3.	Kérd le az összes csapat nevét és azonosítóját a Teams táblából!
+4.	Listázd ki az összes versenyt és azok helyszínét a Tournaments táblából!
+5.	Kérd le azoknak a játékosoknak a nevét és pontszámát, akik egy adott csapathoz tartoznak.
+6.	Kérd le azon játékosok nevét és azonosítóját, akik legalább 3-szor játszottak!
+7.	Kérd le azon játékosokat, akik legalább 150-es, de legfeljebb 200-as pontszámot értek el!
+8.	Listázd ki a versenyeket, ahol a helyszín „Bowling Center”!
+9.	Melyik játékos érte el a legalacsonyabb pontszámot? Kérd le a nevét és pontszámát!
+10.	Kérd le azon versenyek nevét és helyszínét, ahol a helyszín neve „Lanes”-re végződik!
+
+WHERE, ORDER BY és LIMIT használata
+
+11.	Listázd ki azokat a játékosokat, akik több mint 150 pontot értek el, és rendezd őket pontszám szerint csökkenő sorrendbe!
+12.	Kérd le az összes játékost ABC sorrendben a Bowlers táblából!
+13.	Listázd ki a három legmagasabb pontszámot elért játékost!
+14.	Kérd le az összes versenyt, amely "Oasis Lanes" helyszínen zajlott!
+15.	Kérd le azokat a csapatokat, amelyeknek neve "Manta Rays"-re változott.
+16.	Kérd le az 5 legkevesebb pontszámot elért játékost pontszám szerint növekvő sorrendben!
+17.	Listázd ki azokat a játékosokat, akiknek a nevük "A" betűvel kezdődik, és rendezd őket ABC sorrendben!
+18.	Kérd le azon csapatok nevét, amelyekhez 5 vagy több játékos tartozik, és rendezd őket játékosok száma szerint!
+19.	Listázd ki azokat a játékosokat, akik a legtöbb játékot játszották, és rendezd őket a játékok száma szerint csökkenő sorrendbe!
+20.	Kérd le a három legfrissebben létrehozott versenyt a Tournaments táblából!
+
+COUNT(), SUM() és GROUP BY
+
+21.	Számold meg, hány játékos van az adatbázisban!
+22.	Számold meg, hány pontszámot rögzítettek összesen a Bowler_Scores táblában!
+23.	Számold meg, hány különböző csapat van az adatbázisban!
+24.	Számold ki, hogy egy adott játékos összesen hány pontot szerzett!
+25.	Melyik csapatban játszik a legtöbb játékos?
+26.	Számold ki, hogy átlagosan hány pontot értek el a játékosok egy játék során!
+27.	Számold ki csapatonként az összes pontszámot, és rendezd csökkenő sorrendbe!
+28.	Számold ki, hány játékot játszottak összesen minden egyes versenyen!
+29.	Listázd ki azon játékosok számát, akik elérték az 150 feletti átlagpontszámot!
+30.	Számold ki versenyenként, hogy mennyi volt a legmagasabb pontszám, és rendezd csökkenő sorrendbe!
+
+HAVING és GROUP BY
+
+31.	Melyik játékos ért el átlagosan 180 pont felett? (csoportosíts BowlerID alapján és használd a HAVING feltételt)
+32.	Kérd le azokat a csapatokat, ahol az átlagpontszám meghaladja a 150-et!
+33.	Számold ki, hogy a versenyenként összesen hány pontot szereztek, és csak azokat listázd, ahol ez az összeg 1000 pont felett van!
+34.	Listázd ki azokat a játékosokat, akik legalább háromszor értek el 200 pont feletti eredményt!
+35.	Kérd le a játékosok nevét és átlagos pontszámát, de csak azok szerepeljenek, akik legalább 10 játékot játszottak!
+36.	Listázd ki azon csapatokat, ahol az átlagos pontszám meghaladja a 160-at!
+37.	Kérd le azon versenyek nevét, ahol a csapatok átlagpontszáma kevesebb mint 140!
+38.	Számold meg, hogy hány játékos van minden egyes csapatban, és csak azokat a csapatokat listázd, ahol ez a szám 5 vagy több!
+39.	Listázd ki azon játékosokat, akik összesen legalább 500 pontot szereztek!
+40.	Kérd le csapatonként a játékosok számát, és csak azokat a csapatokat jelenítsd meg, ahol több mint 5 játékos van!
+
+JOIN műveletek (INNER JOIN, LEFT JOIN, RIGHT JOIN)
+
+41.	Listázd ki az összes játékost és a csapatuk nevét!
+42.	Listázd ki a versenyeket és az ott részt vett csapatokat!
+43.	Kérd le azokat a játékosokat, akiknek még nincs rögzített pontszámuk!
+44.	Listázd ki a versenyeket és azokat a játékosokat, akik részt vettek rajtuk!
+45.	Kérd le az összes játékost és az általuk szerzett legmagasabb pontszámot!
+46.	Listázd ki azokat a játékosokat, akik legalább egy versenyen részt vettek!
+47.	Listázd ki az összes játékost és azt, hogy mely versenyeken játszottak!
+48.	Kérd le azokat a csapatokat, ahol van legalább egy 200 feletti pontszámot elért játékos!
+49.	Listázd ki az összes játékost és azt a pontszámot, amelyet egy konkrét versenyen értek el!
+50.	Listázd ki az összes játékost, azok pontszámát és a verseny helyszínét, ahol részt vettek!
+
+INNER SELECT és beágyazott lekérdezések
+
+51.	Kérd le azoknak a játékosoknak a nevét, akiknek a pontszáma megegyezik az összesített pontszámok átlagával!
+52.	Listázd ki azoknak a csapatoknak a nevét, akik a legutolsó versenyen részt vettek!
+53.	Kérd le a legmagasabb pontszámot elérő játékos nevét!
+54.	Kérd le azoknak a versenyeknek a nevét, ahol bármely csapat 1000 pont felett teljesített!
+55.	Listázd ki azoknak a csapatoknak a nevét, akik legalább egy olyan játékost tartalmaznak, aki 180 felett átlagol!
+56.	Kérd le azoknak a játékosoknak a nevét, akik elérték a legmagasabb pontszámot egy adott versenyen!
+57.	Listázd ki azokat a csapatokat, amelyek legalább annyi pontot szereztek, mint az átlagos csapatpontszám!
+58.	Kérd le azoknak a játékosoknak a nevét, akik átlag feletti pontszámot értek el!
+59.	Kérd le azon versenyek nevét, ahol az összesített pontszám meghaladja az átlagos versenypontszámot!
+60.	Listázd ki azokat a csapatokat, amelyeknek a legnagyobb pontszáma meghaladja az átlagos legnagyobb pontszámot!
+
+Kiterjesztett GROUP BY, JOIN és HAVING kombinációk
+
+61.	Kérd le csapatonként a játékosok nevét és a legmagasabb pontszámukat!
+62.	Listázd ki azokat a versenyeket, ahol az adott versenyen a legkevesebb pontot szerzett játékos pontszáma meghaladja az 50-et!
+63.	Kérd le az összes csapatot és átlagos pontszámukat, és csak azokat jelenítsd meg, amelyek meghaladják a 180-at!
+64.	Listázd ki azon játékosokat, akik legalább két különböző versenyen értek el 200 feletti pontszámot!
+65.	Kérd le csapatonként a játékosok számát, és rendezze csökkenő sorrendbe a csapatonkénti játékosszám alapján!
+
+Komplexebb beágyazott lekérdezések és adatelemzés
+
+66.	Kérd le a legtöbb pontot szerzett játékos nevét és pontszámát az összesített pontszámok alapján!
+67.	Listázd ki azon játékosokat, akik átlag feletti pontszámot értek el minden olyan versenyen, amelyen részt vettek!
+68.	Kérd le azokat a játékosokat, akik a legtöbb pontot szerezték egy adott versenyen!
+69.	Listázd ki azon játékosok nevét, akik egy adott versenyen a legkevesebb pontot szerezték, de összességében a top 10 pontszám közé tartoznak!
+70.	Kérd le azokat a csapatokat, amelyek legalább egy olyan játékost tartalmaznak, aki minden versenyén átlag feletti pontszámot ért el!
