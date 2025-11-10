@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Labirintus megjelenítő</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Labirintus (API alapján)</h2>
+  <div id="controls">
+    <label>N: <input id="inpN" type="number" min="3" step="2" value="21"></label>
+    <label>M: <input id="inpM" type="number" min="3" step="2" value="31"></label>
+    <label>Seed (opcionális): <input id="inpSeed" type="number" placeholder="üres = véletlen"></label>
+    <button id="btnGen">Generálás</button>
+    <button id="btnFit">Beilleszt (fit)</button>
+  </div>
+
+  <canvas id="canvas"></canvas>
+  <div id="info">Állapot: <span id="status">kész</span></div>
+<script src="script.js"></script>
+</body>
+</html>
