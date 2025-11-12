@@ -20,8 +20,6 @@ try {
   $gen = new MazeGenerator($n, $m, $seed);
   $grid = $gen->generate();
 
-  // Válasz formátuma:
-  // { "n": 21, "m": 31, "grid": [[0,1,0,...],[...],...] }
   echo json_encode([
     'n' => $n,
     'm' => $m,

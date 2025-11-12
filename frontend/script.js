@@ -3,7 +3,7 @@ class MazeRenderer {
     this.canvas = canvas;
     this.ctx = canvas.getContext("2d");
     this.grid = null;
-    this.cellSize = 12; // pixel per cell default
+    this.cellSize = 12; // Cella méret px
     this.wallColor = "#222";
     this.pathColor = "#fff";
     this.padding = 2;
@@ -44,12 +44,11 @@ class MazeRenderer {
     this.canvas.width = w;
     this.canvas.height = h;
     const ctx = this.ctx;
-
-    // background
+    // háttér
     ctx.fillStyle = this.wallColor;
     ctx.fillRect(0, 0, w, h);
 
-    // draw cells
+    // cellák kirajzolása
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
         const val = this.grid[r][c];
@@ -63,7 +62,7 @@ class MazeRenderer {
     }
   }
 
-  // utility to convert grid to textual representation (példa)
+  // segéd: grid szöveggé alakítása
   gridToText() {
     if (!this.grid) return "";
     return this.grid
@@ -96,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const seed = inpSeed.value.trim();
       if (seed !== "") url += `&seed=${encodeURIComponent(seed)}`;
       const data = await renderer.loadFromApi(url);
-      // automatikus fit: szerver-oldali mérethez igazítunk
+
       renderer.fitToCanvas(
         Math.min(window.innerWidth - 40, 1200),
         Math.min(window.innerHeight - 160, 900)
@@ -116,7 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
       Math.min(window.innerHeight - 160, 900)
     );
   });
-
-  // első automatikus generálás
+  // 0. generalas
   generate();
 });
