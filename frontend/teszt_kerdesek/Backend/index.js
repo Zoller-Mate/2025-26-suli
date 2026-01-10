@@ -20,7 +20,7 @@ app.post("/api/teszt-generalas", async (req, res) => {
 const pool = mysql.createPool({
   host: "localhost",
   user: "root",
-  password: "password",
+  password: "",
   database: "feladatbank",
   waitForConnections: true,
 });
