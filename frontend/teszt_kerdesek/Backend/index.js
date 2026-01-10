@@ -36,7 +36,13 @@ async function tesztGeneralas(bemeneti_json) {
     const [rows] = await connection.query("SELECT @ki AS eredmeny");
 
     connection.release();
-    return JSON.parse(rows[0].eredmeny);
+    const kerdesek = JSON.parse(rows[0].eredmeny);
+
+    for (let i = 0; i < kerdesek.length; i++) {
+      kerdesek[i].valaszok = JSON.parse(kerdesek[i].valaszok);
+    }
+
+    return kerdesek;
   } catch (error) {
     throw error;
   }
