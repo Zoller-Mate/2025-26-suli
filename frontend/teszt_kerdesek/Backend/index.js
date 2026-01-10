@@ -1,9 +1,21 @@
-const Express = require("express");
+const express = require("express");
 const mysql = require("mysql2/promise");
+const cors = require("cors");
 
-const App = Express();
+const app = express();
 
-App.post();
+app.use(cors());
+app.use(express.json());
+
+app.post("/api/teszt-generalas", async (req, res) => {
+  try {
+    res.status(200).json(await tesztGeneralas(req.body));
+  } catch (error) {
+    res.status(500).json({
+      error,
+    });
+  }
+});
 
 const pool = mysql.createPool({
   host: "localhost",
@@ -27,3 +39,7 @@ async function tesztGeneralas(bemeneti_json) {
     throw error;
   }
 }
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000.");
+});
