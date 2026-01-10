@@ -1,7 +1,7 @@
 function kerdesek_lekerese() {
   var kerdesek_data = [];
 
-  for (let i = 1; i < 5; i++) {
+  for (let i = 1; i <= 5; i++) {
     const tema_kell_e = document.getElementById("tema_" + i.toString()).checked;
 
     if (tema_kell_e) {
@@ -9,7 +9,7 @@ function kerdesek_lekerese() {
 
       kerdesek_data.push({
         id: i,
-        db: kerdes_db,
+        db: parseInt(kerdes_db) || 0,
       });
     }
   }

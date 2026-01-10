@@ -94,6 +94,7 @@ BEGIN
 		SET v_keresek_szama = CAST(JSON_UNQUOTE(JSON_EXTRACT(p_bemeneti_json, CONCAT('$[', v_kategoria_index, '].db'))) AS INTEGER);
 		
 		TRUNCATE TABLE kivalasztott_feladatok;
+		SET v_nincs_tobb_feladat = FALSE;
 		
 		INSERT INTO kivalasztott_feladatok
 		SELECT f.id, f.leiras, f.pontszam, f.feladat_tipus_id, f.kategoria_id, k.megnevezes

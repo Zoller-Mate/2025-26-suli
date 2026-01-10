@@ -9,10 +9,11 @@ app.use(express.json());
 
 app.post("/api/teszt-generalas", async (req, res) => {
   try {
-    res.status(200).json(await tesztGeneralas(req.body));
+    const data = await tesztGeneralas(req.body);
+    res.status(200).json(data);
   } catch (error) {
     res.status(500).json({
-      error,
+      error: error.message,
     });
   }
 });
@@ -27,6 +28,7 @@ const pool = mysql.createPool({
 
 async function tesztGeneralas(bemeneti_json) {
   try {
+    console.log(bemeneti_json);
     const connection = await pool.getConnection();
 
     await connection.query("SET @be = ?", [JSON.stringify(bemeneti_json)]);
@@ -34,7 +36,7 @@ async function tesztGeneralas(bemeneti_json) {
     const [rows] = await connection.query("SELECT @ki AS eredmeny");
 
     connection.release();
-    return JSON.parse(rows[0]["@ki"]);
+    return JSON.parse(rows[0].eredmeny);
   } catch (error) {
     throw error;
   }
