@@ -1,0 +1,166 @@
+1. a) feladat:
+
+Módszertan | Mikor jelenik meg a unit teszt? | Miért fontos? | Ki írja?
+---------------------------------------------------------------------------
+V-modell | A kódolás után, a teszttervezési fázisban | Ellenőrzi hogy minden komponens jól működik-e külön-külön | A fejlesztők vagy külön tesztelők
+
+Prototípus modell | Minden prototípus készítése után | Gyorsan látjuk hogy az új verzió nem rontott-e el semmit | A fejlesztők
+
+Iteratív / inkrementális | Minden iteráció végén | Megvédi a korábbi funkciókat az új kódtól | A fejlesztők
+
+RAD | A fejlesztés közben, gyakran | Gyors visszajelzés kell a gyors fejlesztéshez | A fejlesztők
+
+Agilis (általánosan) | Sprint alatt folyamatosan | Azonnal látjuk ha valami elromlik, olcsóbb a hibajavítás | A fejlesztők
+
+Scrum | Minden sprint alatt, naponta | A "definition of done" része, véd a regresszió ellen | A fejlesztők (az egész csapat)
+
+Extrém programozás (XP) | A kód írása előtt (TDD módszer) | Ez az egész módszer alapja - először teszt, aztán kód | A fejlesztők párban
+
+
+1. b) feladat:
+
+Az Extrém Programozásnál a unit teszt nagyon fontos szerepet játszik, mert itt használjuk a TDD-t, vagyis a Test Driven Development módszert.
+
+A unit tesztek még a kód megírása előtt születnek. A fejlesztő először megírja a tesztet, ami persze bukik, mert még nincs kód. Aztán megírja a minimális kódot ami átviszi a tesztet zöldre. Végül pedig refaktorál, tehát szépíti a kódot.
+
+A regressziós tesztelést úgy segítik hogy az XP-nél folyamatosan változtatjuk és javítjuk a kódot. Minden refaktorálás után lefutnak az összes unit teszt, így biztosak lehetünk abban hogy nem rontottunk el valami korábban működő funkciót.
+
+Az XP-ben nagyon gyakran futnak a tesztek, akár percenként is. Minden commit előtt és után futtatjuk őket. A folyamatos integráció miatt minden push-nál automatikusan lefutnak. A páros programozásnál is szinte folyamatosan futtatjuk közben a teszteket.
+
+
+2. a) feladat:
+
+1. Ha a kosár üres (az items lista nem tartalmaz elemeket), akkor a függvény 0-t adjon vissza.
+
+2. Ha több termék van a kosárban különböző mennyiségekkel, akkor helyesen számolja ki az összeget úgy hogy minden terméknél az egységár szorozva a mennyiséggel, és ezeket összeadja.
+
+3. Ha bármelyik termék mennyisége negatív szám, akkor a függvény dobjon ValueError hibát.
+
+4. Ha a termékek árai tizedesjegyes számok (például 1234.56 Ft), akkor az összeg is helyesen számolódjon 2 tizedesjegyre kerekítve.
+
+5. Ha nagyon sok termék van a kosárban (például 100 darab), akkor is gyorsan és pontosan kell számolnia.
+
+
+2. b) feladat:
+
+1. Teszteset neve: test_empty_cart_returns_zero
+   Bemenet: Üres lista
+   Várt kimenet: 0
+
+2. Teszteset neve: test_single_item_single_quantity  
+   Bemenet: 1 termék, 1 darab, ára 1000 Ft
+   Várt kimenet: 1000
+
+3. Teszteset neve: test_multiple_items_different_quantities
+   Bemenet: 3 termék, mennyiségek 1, 2, 3 darab, árak 100, 200, 300 Ft
+   Várt kimenet: 1400 (100×1 + 200×2 + 300×3)
+
+4. Teszteset neve: test_negative_quantity_raises_error
+   Bemenet: 1 termék negatív mennyiséggel (-5 db)
+   Várt kimenet: ValueError kivétel
+
+5. Teszteset neve: test_float_prices_rounded_correctly
+   Bemenet: 2 termék, mennyiségek 3 és 2 darab, árak 99.99 és 150.50 Ft
+   Várt kimenet: 600.97
+
+6. Teszteset neve: test_large_cart_many_items
+   Bemenet: 100 termék mindegyik 1 darab, ára 10 Ft
+   Várt kimenet: 1000
+
+
+3. a) feladat:
+
+Új üzleti szabály: Ha az összeg eléri a 10 000 Ft-ot, akkor 5% kedvezményt kell adni.
+
+1. Teszteset neve: test_discount_not_applied_below_threshold
+   Bemenet: Kosár összege 9500 Ft (nem éri el a 10 000-et)
+   Várt kimenet: 9500 (nincs kedvezmény)
+
+2. Teszteset neve: test_discount_at_exact_threshold
+   Bemenet: Kosár összege pontosan 10 000 Ft
+   Várt kimenet: 9500 (5% kedvezmény: 10000 × 0.95)
+   Megjegyzés: Pontosan 10 000 Ft-nál már jár a kedvezmény.
+
+3. Teszteset neve: test_discount_applied_above_threshold
+   Bemenet: Kosár összege 20 000 Ft
+   Várt kimenet: 19 000 (5% kedvezmény: 20000 × 0.95)
+
+4. Teszteset neve: test_discount_just_above_threshold
+   Bemenet: Kosár összege 10 100 Ft
+   Várt kimenet: 9595 (5% kedvezmény: 10100 × 0.95)
+
+
+3. b) feladat:
+
+A regressziós teszt azt jelenti hogy amikor új funkciókat adunk hozzá vagy változtatunk a kódon, akkor ellenőrizzük hogy a régi funkciók még mindig jól működnek-e. Vagyis nem rontottunk-e el semmit amit korábban megcsináltunk.
+
+Az iteratív és prototípusos fejlesztésnél minden iterációban változtatjuk a kódot, bővítjük újabb dolgokkal. Ilyenkor nagyon könnyen elronthatunk valamit amit már előzőleg működött. A meglévő unit teszt készlet azért kritikus, mert automatikusan lefuttatva azonnal megmutatja ha valamit elrontottunk. Így gyorsan és biztonságosan tudunk fejleszteni anélkül hogy félnénk minden változtatástól.
+
+A calculate_cart_total példánál:
+
+Regressziós tesztként szolgálnak a korábbi tesztek:
+- test_empty_cart_returns_zero - az üres kosár még mindig 0-t ad
+- test_single_item_single_quantity - az alapvető számolás működik
+- test_multiple_items - a többtételes kosár számítása helyes
+- test_negative_quantity_raises_error - a hibakezelés megmaradt
+- test_float_prices_rounded_correctly - a kerekítés pontos
+
+Az új kedvezményes funkciót fedik le:
+- test_discount_not_applied_below_threshold
+- test_discount_at_exact_threshold
+- test_discount_applied_above_threshold
+- test_discount_just_above_threshold
+
+
+4. a) feladat:
+
+Product Owner:
+A Product Owner határozza meg hogy mit kell fejleszteni, de ő nem írja a unit teszteket. Viszont ő dönthet arról hogy elég lefedett-e a funkcionalitás tesztekkel, hogy teljesüljön a Definition of Done.
+
+Scrum Master:
+A Scrum Master nem ír teszteket, de segít a csapatnak hogy jó tesztelési szokásokat alakítsanak ki. Ha a tesztek miatt lassul a munka, akkor segít megoldani a problémát.
+
+Fejlesztő:
+A fejlesztők írják a unit teszteket a kóddal együtt. Ők futtatják is a teszteket fejlesztés közben és commit előtt. Ők felelősek azért hogy minden új funkcióhoz legyen unit teszt.
+
+Tesztelő:
+Ha van külön tesztelő a csapatban, ő inkább integrációs és rendszerteszteket ír, nem unit teszteket. Viszont segíthet a fejlesztőknek unit teszt stratégiát tervezni vagy code review-ban részt venni.
+
+
+4. b) feladat:
+
+Sprint Planning:
+A tervezéskor megbeszéljük hogy mely funkciókat kell unit tesztekkel lefedni. A Definition of Done-ba beleírjuk hogy minden user story-hoz kell unit teszt. Becslésnél figyelembe vesszük hogy mennyi időbe telik a tesztek megírása is.
+
+Daily Scrum:
+A napi egyeztetésen jelzik a fejlesztők ha unit tesztek elbuktak vagy valaki elrontott valamit. Ha valaki nem tud továbblépni mert a tesztek hibáznak, akkor akadályként említi. Elmondják milyen teszteket írtak előző nap.
+
+Sprint Review:
+A sprint végi bemutatón megmutatjuk a kész funkciót. A unit tesztek zöld állapota bizonyítja hogy a kód működik és kész. A stakeholdereknek megmutathatjuk hogy a tesztek mind átmennek, ez bizalmat épít.
+
+Sprint Retrospective:
+A visszatekintésben megbeszéljük hogy miért buktak el tesztek, volt-e elég unit teszt, túl sok volt-e a teszt karbantartás. Megállapodunk javításokban, például hogy több tesztet írunk vagy jobb lefedettséget akarunk.
+
+
+5. a) feladat:
+
+Új funkció: apply_coupon(total, code) függvény ami kuponkódot alkalmaz a végösszegre.
+
+1. Ha a kuponkód "SAVE10", akkor 10% kedvezményt ad a végösszegből.
+
+2. Ha a kuponkód nem létezik vagy érvénytelen, akkor nem változik az ár, visszaadja az eredeti összeget.
+
+3. Ha a kuponkód lejárt (például "EXPIRED2024"), akkor ValueError hibát dob "Lejárt kupon" üzenettel.
+
+4. A kuponkód csak akkor alkalmazható ha a kosár összege legalább 5000 Ft. Ha kevesebb, akkor nem ad kedvezményt és visszaadja az eredeti összeget.
+
+5. Ha a kuponkód üres string vagy None, akkor nem változik az ár, visszaadja az eredeti összeget.
+
+
+6. feladat:
+
+A napi fordítás és a folyamatos integráció (CI) azt jelenti hogy minden nap vagy minden commit után automatikusan leépül a szoftver. Ennek nagyon fontos része hogy közben a unit tesztek is automatikusan lefutnak. Ha valaki olyan kódot ír ami miatt a unit tesztek elbuknak, akkor a build is megbukik és mindenki látja a problémát.
+
+Ha valaki olyan kódot push-ol ami miatt a unit tesztek elbuknak, akkor a CI rendszer (például GitHub Actions vagy Jenkins) piros jelzést ad. Az egész csapat látja hogy a build eltört. Az illető fejlesztőt értesíti a rendszer, és azonnal javítania kell a hibát mielőtt bárki más dolgozna tovább. Ez megakadályozza hogy rossz kód kerüljön bele a közös kódbázisba.
+
+Az iteratív és agilis módszertanokban fontos hogy gyorsan fejlesszünk és gyakran integráljunk. A CI és a unit tesztek biztosítják hogy a gyors fejlesztés közben ne romoljanak el dolgok. Minden iterációban többször is commitolunk és integrálunk, a CI automatikusan ellenőrzi hogy minden rendben van-e. Ez csökkenti a hibák költségét és gyorsítja a visszajelzést. Az agilis elv szerint minél hamarabb látjuk a hibát, annál könnyebb és olcsóbb javítani.
