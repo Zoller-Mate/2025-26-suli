@@ -1,4 +1,4 @@
-# elso ora 2. feladat - a program elkeszitese
+# elso ora 2. feladat
 
 from dataclasses import dataclass
 from datetime import date

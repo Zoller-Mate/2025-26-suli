@@ -1,0 +1,4 @@
+# file: C:\GITHUB\2025-26-suli\unittest\0916\kosar_feladat\pricing.py
+# hypothesis_version: 6.150.1
+
+[0.0, 100, '0', 'Kupon lejárt', 'Mennyiség legalább 1', 'coupon_applied', 'gross_total', 'items_gross', 'net_total', 'shipping_fee', 'vat_component']

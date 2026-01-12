@@ -1,4 +1,4 @@
-# alapveto tesztek + masodik ora 4. feladat - uj tesztek irasa
+# alapveto tesztek + masodik ora 4. feladat
 
 import pytest
 from datetime import date, timedelta

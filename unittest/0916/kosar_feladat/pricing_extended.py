@@ -1,4 +1,4 @@
-# onallo feladat 1. - fix osszegu kupon implementacioja
+# onallo feladat 1.
 
 from dataclasses import dataclass
 from datetime import date

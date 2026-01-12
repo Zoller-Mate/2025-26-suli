@@ -1,5 +1,4 @@
-# onallo feladat 1. - fix osszegu kupon tesztjei
-
+# onallo feladat 1.
 import pytest
 from datetime import date
 from pricing_extended import (

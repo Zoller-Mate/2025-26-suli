@@ -1,4 +1,4 @@
-# onallo feladat 2. - property-based teszteles hypothesis-szel
+# onallo feladat 2.
 
 import pytest
 from hypothesis import given, strategies as st, assume
