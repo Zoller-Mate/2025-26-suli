@@ -28,4 +28,4 @@ const response = (res, code, message) => {
 
 exports.exportSql();
 
-exports.hibalistaHtml();
+exports.exportHtml();
