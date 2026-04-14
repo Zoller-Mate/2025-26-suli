@@ -2,23 +2,27 @@ const multer = require("multer");
 const fs = require("fs");
 const Model = require("./model");
 
-const upload = multer({ dest: "/uploads" });
-exports.tranzakcioFeltoltes(upload.single("tranzakciok"), (req, res), () => {
-  if (!req.file) {
-    return response(res, 400, "Nem érkezett file.");
-  }
+const upload = multer({ dest: "uploads/" });
 
-  fs.readFile(req.file.path, "utf8", (err, data) => {
-    if (err) {
-      console.log(err);
-      return response(res, 500, "Hiba a file olvasásakor.");
+exports.tranzakcioFeltoltes = [
+  upload.single("tranzakciok"),
+  (req, res) => {
+    if (!req.file) {
+      return response(res, 400, "Nem érkezett file.");
     }
 
-    Model.tranzakciokFrissites(data);
-  });
+    fs.readFile(req.file.path, "utf8", (err, data) => {
+      if (err) {
+        console.log(err);
+        return response(res, 500, "Hiba a file olvasásakor.");
+      }
 
-  response(res, 200, "Sikeres beolvasás.");
-});
+      Model.tranzakciokFrissites(data);
+
+      response(res, 200, "Sikeres beolvasás.");
+    });
+  },
+];
 
 const response = (res, code, message) => {
   res.status(code).json({
@@ -26,6 +30,10 @@ const response = (res, code, message) => {
   });
 };
 
-exports.exportSql();
+exports.exportSql = (req, res) => {
+  response(res, 200, "SQL export végpont");
+};
 
-exports.exportHtml();
+exports.exportHtml = (req, res) => {
+  response(res, 200, "HTML export végpont");
+};

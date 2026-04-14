@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const fileInput = document.getElementById("tranzakciok");
 const sendFileBtn = document.getElementById("sendFile");
 
@@ -25,10 +23,13 @@ sendFileBtn.addEventListener("click", () => {
     method: "POST",
     body: formData,
   })
-    .then((response) => response.json())
-    .then((responseJson) => {
-      alert(response.message);
-      if (response.statusCode == 200) {
+    .then((response) => {
+      responseJson = response.json();
+
+      alert(response.status);
+      alert(responseJson.message);
+
+      if (response.status == 200) {
         exportHtmlBtn.disabled = false;
         exportSqlBtn.disabled = false;
       }
