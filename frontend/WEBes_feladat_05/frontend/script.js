@@ -23,8 +23,8 @@ sendFileBtn.addEventListener("click", () => {
     method: "POST",
     body: formData,
   })
-    .then((response) => {
-      responseJson = response.json();
+    .then(async (response) => {
+      const responseJson = await response.json();
 
       alert(response.status);
       alert(responseJson.message);
@@ -34,6 +34,7 @@ sendFileBtn.addEventListener("click", () => {
         exportSqlBtn.disabled = false;
       }
       fileInput.value = "";
+      sendFileBtn.disabled = true;
     })
     .catch((error) => {
       alert("Hiba a file küldése során (frontend)");
