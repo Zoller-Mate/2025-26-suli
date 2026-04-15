@@ -153,13 +153,13 @@ function testH2Content() {
   }
 }
 
-// 09. Teszt: A táblázat fejlécének ellenőrzése (Név, Ár, Mennyiség (db))
+// 09. Teszt: A táblázat fejlécének ellenőrzése (Termék neve, Ár (Ft), Mennyiség (db))
 function testTableHeaders() {
   const headers = document.querySelectorAll("#myTable th");
   if (
     headers.length >= 3 &&
-    headers[0].textContent.trim() === "Név" &&
-    headers[1].textContent.trim() === "Ár" &&
+    headers[0].textContent.trim() === "Termék neve" &&
+    headers[1].textContent.trim() === "Ár (Ft)" &&
     headers[2].textContent.trim() === "Mennyiség (db)"
   ) {
     console.log("09. Teszt: A táblázat fejléce megfelelő: Siker (SUCCESS)");
