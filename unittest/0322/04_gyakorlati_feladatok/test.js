@@ -114,7 +114,7 @@ module("2. Feladat: JS Logika", () => {
     });
 
     test("2. Csak engedélyezett karaktereket tartalmaz (kis/nagybetű/szám)", (assert) => {
-      const pwd = generatePassword(50); // Generálunk egy hosszu jelszot, hogy tesztelhessuk a halmazt
+      const pwd = generatePassword(50);
       assert.ok(
         /^[a-zA-Z0-9]+$/.test(pwd),
         "Sikeres - csak angol ABC és számok alkotják.",
