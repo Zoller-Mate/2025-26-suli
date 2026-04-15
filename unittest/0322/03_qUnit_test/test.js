@@ -22,7 +22,7 @@ QUnit.module("1. Feladat: DOM Tesztek - Táblázat", function () {
 
       const firstProductName =
         rows[0].querySelector(".product-name").textContent;
-      assert.equal(firstProductName, "Alma", "6. Az első terméknév 'Alma'.");
+      assert.equal(firstProductName, "Alma", "6. Az első Gyümölcs 'Alma'.");
     },
   );
 });
