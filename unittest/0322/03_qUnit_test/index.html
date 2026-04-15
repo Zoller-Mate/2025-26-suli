@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qUnit teszt - Gyakorlati feladatok</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="">Gyakorlati Feladatok - Applikáció UI</h1>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <table id="task1-table" class="table table-striped table-bordered table-hover mt-4">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Terméknév</th>
+                            <th scope="col">Ár</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td class="product-name">Alma</td>
+                            <td class="product-price">500 FT</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td class="product-name">Körte</td>
+                            <td class="product-price">600 FT</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-6">
+                <form id="task2-form" class="p-4 border rounded shadow-sm mt-4">
+                    <h4>Regisztráció</h4>
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Felhasználónév</label>
+                        <input type="text" class="form-control" id="username" name="username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Jelszó</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="firstname" class="form-label">Keresztnév</label>
+                        <input type="text" class="form-control" id="firstname" name="firstname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lastname" class="form-label">Vezetéknév</label>
+                        <input type="text" class="form-control" id="lastname" name="lastname" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label d-block">Neme</label>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="genderMale" value="male">
+                            <label class="form-check-label" for="genderMale">Férfi</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="female">
+                            <label class="form-check-label" for="genderFemale">Nő</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Lakcím</label>
+                        <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">Mentés</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
